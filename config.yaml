@@ -1,0 +1,16 @@
+gcpCredentials:
+    projectId: cloudlab_rso
+    topicPath: projects/cloudlab-rso/topics/topic-d
+    subscriptionPath: "projects/cloudlab-rso/subscriptions/topic-d-s"
+    credentialsPath: pubsub-sa.json
+messageParameters:
+    numberOfMessages: 150
+    messageLengthX: 1
+messageArgs:
+    origin: python-sample
+    username: gcp
+batch: False
+batchSettings:
+    maxMessages: 10
+    maxBytes: 1024
+    maxLatency: 1

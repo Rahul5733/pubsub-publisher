@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cloudlab-rso",
+  "private_key_id": "2712d102d0595bd912f451c2b4bbb086f1a20696",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCzeiP+xA5B5wJT\nMdy4c4Yd1NEZoj4bwfY6dmh/gPdLjjvoEOtrlg2flUnYiVA/c3JEk4BmglZ1H1kM\n792sDzY9uO/1Xi0yCnXw5v0Z4laLJdzyV5vALTZWDNjV7uXGaCfcdJ1f4fQr6m/V\n4CUwXLw4erEmRnKTYlrxWdocwjU6zxg3w1kA7MEF2XuuMQzhDshTJMRtbhX5ZxTN\noUwC8pqdxqbxx7n4LEKABKMb3wQBDeT1nVY9c/AtlWoqCIlEZY569Aln1+QbhewD\nf/6Z2TCq6scyMYqiXtQxJwlVl/Cgn/7E/IGp6K39Ik6+wwx8HmTmxw26vGQBORpY\ncord0AOHAgMBAAECggEAH2iXlgUfbZ8MxBxswQbOiLfuo+rFrbvi6FZCcVXTcTCC\nAVm8qUZIOg45LyDQn1oHvEKH7OiQUszam636gBrlZiXQMIN7q08zVqZF0trORGmq\n4eo9AoOnB6YV6FJ3eaJOn4D07YuwXGMZkTc5qt3/vm6SQ91+PZavzZ7o0bGW+SRr\ndO8kq7GnkbTPgEL5gfwgZ95DfT8C9qjJvyuPwDBkV1xQyc4v11j1RZcXSSEr8Jpq\nxwd8RHInGWRQBhw5z2uOLyVmWiyWfa/17Rfh9LNAMa/1KRZ1/ijAi50pxvR6qGeg\nqwKL8c4Py73U1Of+1vh2OsiPknjaEhZ/eLLNs/yK8QKBgQDs8JOMNsZi3EtOrIwb\nol+gvFDSWDO2GaeeFy0gyyXqMZn8ZkP9uLw5TZzhZzAVW2VmvPwAI853MbIeNFW1\nwjVojyRDzkMzUR7Lwsk+7Mock9Yo7eOvmypNqdI3LWEBX0UA85O/5m994ZpQWj37\nQPZrOk2ODUgxacrxJx7bVnlHaQKBgQDB6jTJT6rFNePzcFiWVQkk9JVqmut8vhIt\nKnMIPxhpoDCuP2DJ2gmir7rWnZ2QnRQ0tUPZZOGX4ux71DYezikl7YRtX9Zu+2jl\n4c8fSU0zRib4MoAZM2JbcNxNCCIvRk3o45LgsVOE17S2WKBk2LD6NDapX12NTjoY\ng7UszI0FbwKBgBY0nb9gSsttFemzphXY69lmjLSJ656/XMQmK+aM42rFZ0cOVoTq\n0UkViwRc5Va7EA/G2l8w++KT17uY8Aduwg6gi6eHJykiCx7RjIbHLlHrUQDY+qO0\niQxqQ/dD23mDcjYandg4Qm6rvAiXzINFnVKDTk1n1UI8Rfa/0daAjjExAoGAW3VZ\nHDGk+4qlTqYIQi8tNu7cogEbXCRRclf5FUSdAQR6sVRXFBzwOnjjiGGidRiA9TMh\nIyF/fSGcI/M8616U7byOnv96pbGSEgpko/7wmGRX8OvwmvIvS615WiOh6+YezN64\n4Z0BJUCPjQlT7Px+zCNgPJYsC39/yxwjkVOQl6UCgYAcXV8hQWytXjyMFLEqsMS6\ncJWmbzuAVwQ2LN3Gy1/0KPC0D7ejn5rFVdakQvVFteB3WPJLejAFIe0fBvPpCe/Y\nZCbpH5O/WSGA+7CranRKbPRlFimzNuhTmhJTsyF75XwICCc3xnQaEBhZvETamUpP\nyBf5YKuBwDWppUUhzsUv6Q==\n-----END PRIVATE KEY-----\n",
+  "client_email": "pubsub-bigq@cloudlab-rso.iam.gserviceaccount.com",
+  "client_id": "102164988180061968016",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/pubsub-bigq%40cloudlab-rso.iam.gserviceaccount.com"
+}
