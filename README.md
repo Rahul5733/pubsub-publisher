@@ -13,7 +13,6 @@ This service can be used as a simulator for pubsub messege publisher, it can:
 **How to run this publisher**
 ---
 
-![Alt text](images/bf_logo.jpg?raw=true "Title")
 
 1. Clone this repo , using:
 
