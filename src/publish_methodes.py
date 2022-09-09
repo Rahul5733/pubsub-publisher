@@ -37,7 +37,7 @@ def publish_messages(topic_path, num_of_messages: int, data, *args) -> int:
     publisher = pubsub_v1.PublisherClient()
 
     for n in range(1, num_of_messages):
-        future = publisher.publish(topic_path, data, origin="python", username="gcp")
+        future = publisher.publish(topic_path, data, origin="python", username="stream")
         print(future.result())
 
     print(f"Published messages to {topic_path}.")
