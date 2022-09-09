@@ -4,27 +4,27 @@ from typing import Dict, List
 import time, datetime
 
 
-def gen_string(length=18, chars=string.ascii_letters):
+def gen_random_string(length=18, chars=string.ascii_letters):
     return "".join([choice(chars) for i in range(length)])
 
 
-def gen_digits(length=4, chars=string.digits):
-    return "".join([choice(chars) for i in range(length)])
+def gen_random_digits(length=4, chars=string.digits):
+    return int("".join([choice(chars) for i in range(length)]))
 
 
-def gen_date():
+def gen_random_date():
     ts = time.time()
-    rand_nums = gen_digits()
+    rand_nums = gen_random_digits()
     return str(
         datetime.datetime.fromtimestamp(ts).strftime(
-            "%Y-%m-%dT%H:%M:%S.{}+02:00".format(rand_nums)
+            "%Y-%m-%dT%H:%M:%S.{}+02:00".format(str(rand_nums))
         )
     )
 
 
 keys_to_randomize = {
-    "pipelineComponent": gen_string(),
-    "pipelineName": gen_string(),
-    "timestampStart": gen_date(),
-    "timestampStop": gen_date(),
+    "pipelineComponent": gen_random_string(),
+    "pipelineName": gen_random_string(),
+    "timestampStart": gen_random_date(),
+    "timestampStop": gen_random_date(),
 }
