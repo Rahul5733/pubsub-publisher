@@ -2,6 +2,7 @@ import os
 from google.cloud import pubsub_v1
 from support_functions import *
 from publish_methodes import *
+from keys_to_randomize import keys_to_randomize
 
 config = read_conf()
 credentials_path = config["gcpCredentials"]["credentialsPath"]
@@ -12,7 +13,7 @@ num_of_messages = config["messageParameters"]["numberOfMessages"]
 
 
 def send_messages():
-    data = read_message()
+    data = read_and_radomize(keys_to_randomize)
     if config["batch"]:
         print("trigger batch processing")
         batch_settings = config["batchSettings"]
