@@ -1,14 +1,20 @@
-# pubsub-publisher knowledge base
-
-
-![Alt text](images/bf_logo.jpg?raw=true "Title")
 
 &emsp;
 &emsp;
 ***“Torture the data, and it will confess to anything.” — Ronald Coase***
 
+
+# pubsub-publisher
+This service can be used as a simulator for pubsub messege publisher, it can:
+- Send messages to pubsub topic as batch or stream data
+- Randomize keys in the message so that every messege sent is different
+- Varry the size and frequency of single messages/batches
+
 **How to run this publisher**
 ---
+
+![Alt text](images/bf_logo.jpg?raw=true "Title")
+
 1. Clone this repo , using:
 
     `git clone https://github.com/Blueforte-GmbH/pubsub-publisher.git`
@@ -48,7 +54,9 @@
 
 **How to add/remove keys in randomizer**
 
-Here is an example, How to randomize message keys, Here your keys are added to the list and 
+Here is an example, How to randomize message keys, Here five example keys are added to the dict, these values will be random in every message, depending on the data type, there are three methodes written for srting, datetime and int.
+
+For example, a key "pipelineMetricId" has to be randomized and its an integer type, add that key to this dict and gen_random_number() as its value.
 
 ```
     keys_to_randomize = {
@@ -60,18 +68,4 @@ Here is an example, How to randomize message keys, Here your keys are added to t
     }
 ```
 
-**Usefull information about pubsub-publisher**
----
-1. For starters, an introduction about pubsub-publisher components
 
-    https://medium.com/swlh/apache-pubsub-publisher-in-5-minutes-c005b4b11b26
-
-2. How Big companies are using pubsub-publisher
-
-    https://www.youtube.com/watch?v=428AiCBMZoQ
-
-
-3. pubsub-publisher documentation
-
-    https://pubsub-publisher.apache.org/docs/apache-pubsub-publisher/stable/tutorial.html
- 
