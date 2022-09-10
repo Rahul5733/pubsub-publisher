@@ -48,18 +48,18 @@ def test_publish_messages():
 def test_read_and_randomize():
     message = read_message()
     keys_to_randomize1 = {
-        "pipelineComponent": gen_string(),
-        "pipelineName": gen_string(),
-        "timestampStart": gen_date(),
-        "timestampStop": gen_date(),
+        "pipelineComponent": gen_random_string(),
+        "pipelineName": gen_random_string(),
+        "timestampStart": gen_random_date(),
+        "timestampStop": gen_random_date(),
     }
     data_1 = randomize_message(message, keys_to_randomize1).copy()
 
     keys_to_randomize2 = {
-        "pipelineComponent": gen_string(),
-        "pipelineName": gen_string(),
-        "timestampStart": gen_date(),
-        "timestampStop": gen_date(),
+        "pipelineComponent": gen_random_string(),
+        "pipelineName": gen_random_string(),
+        "timestampStart": gen_random_date(),
+        "timestampStop": gen_random_date(),
     }
     data_2 = randomize_message(message, keys_to_randomize2).copy()
 
