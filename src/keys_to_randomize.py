@@ -1,17 +1,20 @@
 from random import choice, random
 import string
 from typing import Dict, List
-import time, datetime
+import time, datetime, asyncio
 
 
+@asyncio.coroutine
 def gen_random_string(length=18, chars=string.ascii_letters):
     return "".join([choice(chars) for i in range(length)])
 
 
+@asyncio.coroutine
 def gen_random_digits(length=4, chars=string.digits):
     return int("".join([choice(chars) for i in range(length)]))
 
 
+@asyncio.coroutine
 def gen_random_date():
     ts = time.time()
     rand_nums = gen_random_digits()

@@ -1,3 +1,11 @@
 google-cloud-pubsub
 pytest
 pyyaml
+anyio
+pytest-asyncio
+pytest-tornasync
+pytest-trio
+pytest-twisted
+pytest-xdist
+fastapi
+uvicorn[standard]

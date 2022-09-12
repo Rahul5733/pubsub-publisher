@@ -1,7 +1,9 @@
 from google.cloud import pubsub_v1
 from concurrent import futures
+import asyncio
 
 
+@asyncio.coroutine
 def publish_messages_with_batch_settings(
     topic_path: str, num_of_messages: int, batch_settings, data
 ) -> int:
@@ -31,6 +33,7 @@ def publish_messages_with_batch_settings(
     return len(publish_futures)
 
 
+@asyncio.coroutine
 def publish_messages(topic_path, num_of_messages: int, data, *args) -> int:
     """Publishes multiple messages to a Pub/Sub topic."""
 
