@@ -3,24 +3,24 @@ from src import publisher
 from src.support_functions import *
 from src.publish_methodes import *
 import os
-from keys_to_randomize import *
+from src.keys_to_randomize import *
 
 
 def test_read_conf():
     assert read_conf()["gcpCredentials"]["projectId"] == "cloudlab_rso"
 
 
-def test_read_and_randomize():
-    assert isinstance(read_and_radomize(), bytes)
+async def test_read_and_randomize():
+    assert isinstance(await read_and_randomize(keys_to_randomize), bytes)
 
 
-def test_publish_messages_with_batch_settings():
+async def test_publish_messages_with_batch_settings():
     config = read_conf()
-    data = read_and_radomize(keys_to_randomize)
+    data = await read_and_randomize(keys_to_randomize)
     num_of_messseges = config["messageParameters"]["numberOfMessages"]
     batch_settings = config["batchSettings"]
     assert (
-        publish_messages_with_batch_settings(
+        await publish_messages_with_batch_settings(
             config["gcpCredentials"]["topicPath"],
             num_of_messseges,
             batch_settings,
@@ -30,13 +30,13 @@ def test_publish_messages_with_batch_settings():
     )
 
 
-def test_publish_messages():
+async def test_publish_messages():
     config = read_conf()
-    data = read_and_radomize(keys_to_randomize)
+    data = await read_and_randomize(keys_to_randomize)
     num_of_messseges = config["messageParameters"]["numberOfMessages"]
     batch_settings = config["batchSettings"]
     assert (
-        publish_messages(
+        await publish_messages(
             config["gcpCredentials"]["topicPath"],
             num_of_messseges,
             data,
@@ -45,23 +45,24 @@ def test_publish_messages():
     )
 
 
-def test_read_and_randomize():
-    message = read_message()
+async def test_read_and_randomize():
+    message = await read_message()
     keys_to_randomize1 = {
-        "pipelineComponent": gen_random_string(),
-        "pipelineName": gen_random_string(),
-        "timestampStart": gen_random_date(),
-        "timestampStop": gen_random_date(),
+        "factIntervalStart": gen_random_date(),
+        "factIntervalEnd": gen_random_date(),
+        "pipelineComponentType": gen_random_string(),
+        "pipelineEnvironment": gen_random_string(),
+        "pipelineComponentIdentifier": gen_random_string(),
     }
-    data_1 = randomize_message(message, keys_to_randomize1).copy()
+    data_1 = await randomize_message(message, keys_to_randomize1)
 
     keys_to_randomize2 = {
-        "pipelineComponent": gen_random_string(),
-        "pipelineName": gen_random_string(),
-        "timestampStart": gen_random_date(),
-        "timestampStop": gen_random_date(),
+        "factIntervalStart": gen_random_date(),
+        "factIntervalEnd": gen_random_date(),
+        "pipelineComponentType": gen_random_string(),
+        "pipelineEnvironment": gen_random_string(),
+        "pipelineComponentIdentifier": gen_random_string(),
     }
-    data_2 = randomize_message(message, keys_to_randomize2).copy()
+    data_2 = await randomize_message(message, keys_to_randomize2)
 
-    for key in keys_to_randomize:
-        assert data_1[key] != data_2[key]
+    assert data_1 == data_2

@@ -1,7 +1,7 @@
-from random import choice, random
+from random import choice
 import string
 from typing import Dict, List
-import time, asyncio, pytz
+import pytz
 from datetime import datetime
 
 

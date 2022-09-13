@@ -1,12 +1,22 @@
 {
-    "dataPointGroup": "basicMonitoring",
-    "dataPointGroupVersion": "v1",
-    "monitoringType": "stream",
-    "pipelineType": "Gravitas ADS",
-    "pipelineName": "ov-deepsea-salesorder",
-    "pipelineComponent": "tokenizer",
-    "timestampStart": "2021-10-13T18:13:00.000+02:00",
-    "timestampEnd": "2021-10-13T18:14:00.000+02:00",
-    "metricId": "123",
-    "metricValue": 99
+    "message_metadata": {
+        "schemaIdentifier": "spqr-standard-message-schema",
+        "schemaVersion": "0.0.1",
+        "messageUuid": "144488da-68f4-4e8e-be4c-afb097c60efa",
+        "messageTimestamp": "2021-10-13T18:13:47.895+02:00",
+        "messagePublisher": "Gravitas",
+        "messagePublisherEnvironment": "dev"
+    },
+    "payload": {
+        "factSpecificationIdentifier": "SPQR-123",
+        "factValue": 99,
+        "factIntervalStart": "2021-10-13T18:13:00.000+02:00",
+        "factIntervalEnd": "2021-10-13T18:14:00.000+02:00",
+        "pipelineType": "stream",
+        "pipelineEnvironment": "dev",
+        "pipelineIdentifier": "Deepsea Salesorder",
+        "pipelineComponent": "Gravitas",
+        "pipelineComponentType": "Gravitas GSA",
+        "pipelineComponentIdentifier": "ov-deepsea-salesorder"
+    }
 }
