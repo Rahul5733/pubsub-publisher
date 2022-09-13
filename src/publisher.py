@@ -24,3 +24,22 @@ async def send_messages():
         )
     else:
         await publish_messages(topic_path, num_of_messages, data)
+
+
+async def send_messages_from_query(parameters):
+    data = await read_and_radomize(keys_to_randomize)
+    if parameters.batch:
+        print("trigger batch processing")
+        batch_settings = {
+            parameters.maxMessages,
+            parameters.maxBytes,
+            parameters.maxLatency,
+        }
+        publish_messages_with_batch_settings(
+            config["gcpCredentials"]["topicPath"],
+            parameters.numberOfMessages,
+            batch_settings,
+            data,
+        )
+    else:
+        await publish_messages(topic_path, parameters.numberOfMessages, data)

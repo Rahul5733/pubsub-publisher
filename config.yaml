@@ -9,7 +9,7 @@ messageParameters:
 messageArgs:
     origin: python-sample
     username: gcp
-batch: False
+batch: True
 batchSettings:
     maxMessages: 100
     maxBytes: 1024

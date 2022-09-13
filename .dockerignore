@@ -1,0 +1,6 @@
+tests/__pycache__/*
+.pytest_cache
+pubsub-sa.json
+venv
+__pycache__
+venv
