@@ -4,17 +4,14 @@ from typing import Dict, List
 import time, datetime, asyncio
 
 
-@asyncio.coroutine
 def gen_random_string(length=18, chars=string.ascii_letters):
     return "".join([choice(chars) for i in range(length)])
 
 
-@asyncio.coroutine
 def gen_random_digits(length=4, chars=string.digits):
     return int("".join([choice(chars) for i in range(length)]))
 
 
-@asyncio.coroutine
 def gen_random_date():
     ts = time.time()
     rand_nums = gen_random_digits()
@@ -30,4 +27,9 @@ keys_to_randomize = {
     "pipelineName": gen_random_string(),
     "timestampStart": gen_random_date(),
     "timestampStop": gen_random_date(),
+    "pipelineIdentifier": gen_random_string(),
+    "pipelineComponent": gen_random_string(),
+    "pipelineComponentType": gen_random_string(),
+    "pipelineEnvironment": gen_random_string(),
+    "pipelineComponentIdentifier": gen_random_string(),
 }

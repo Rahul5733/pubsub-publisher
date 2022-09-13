@@ -1,7 +1,7 @@
 gcpCredentials:
     projectId: cloudlab_rso
     topicPath: projects/cloudlab-rso/topics/topic-w
-    subscriptionPath: "projects/cloudlab-rso/subscriptions/bigwriter"
+    subscriptionPath: "projects/cloudlab-rso/subscriptions/sub_w"
     credentialsPath: "./pubsub-sa.json"
 messageParameters:
     numberOfMessages: 15
@@ -9,7 +9,7 @@ messageParameters:
 messageArgs:
     origin: python-sample
     username: gcp
-batch: True
+batch: False
 batchSettings:
     maxMessages: 100
     maxBytes: 1024
