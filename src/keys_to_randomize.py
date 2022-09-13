@@ -1,7 +1,7 @@
 from random import choice, random
 import string
 from typing import Dict, List
-import time, datetime
+import time, datetime, asyncio
 
 
 def gen_random_string(length=18, chars=string.ascii_letters):
@@ -27,4 +27,9 @@ keys_to_randomize = {
     "pipelineName": gen_random_string(),
     "timestampStart": gen_random_date(),
     "timestampStop": gen_random_date(),
+    "pipelineIdentifier": gen_random_string(),
+    "pipelineComponent": gen_random_string(),
+    "pipelineComponentType": gen_random_string(),
+    "pipelineEnvironment": gen_random_string(),
+    "pipelineComponentIdentifier": gen_random_string(),
 }

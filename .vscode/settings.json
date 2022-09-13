@@ -1,4 +1,9 @@
 {
-    "python.defaultInterpreterPath": "./venv/bin/python",
-    "editor.formatOnSave": true
+    "python.pythonPath": "venv/bin/python",
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestEnabled": true
 }
