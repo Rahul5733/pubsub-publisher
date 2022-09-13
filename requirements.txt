@@ -9,3 +9,4 @@ pytest-twisted
 pytest-xdist
 fastapi
 uvicorn[standard]
+pytz
