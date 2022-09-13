@@ -2,7 +2,7 @@ gcpCredentials:
     projectId: cloudlab_rso
     topicPath: projects/cloudlab-rso/topics/topic-w
     subscriptionPath: "projects/cloudlab-rso/subscriptions/bigwriter"
-    credentialsPath: pubsub-sa.json
+    credentialsPath: "./pubsub-sa.json"
 messageParameters:
     numberOfMessages: 15
     messageLengthX: 1

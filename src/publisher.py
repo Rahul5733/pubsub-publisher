@@ -19,7 +19,7 @@ async def send_messages():
     if config["batch"]:
         print("trigger batch processing")
         batch_settings = config["batchSettings"]
-        await publish_messages_with_batch_settings(
+        publish_messages_with_batch_settings(
             config["gcpCredentials"]["topicPath"], num_of_messages, batch_settings, data
         )
     else:
