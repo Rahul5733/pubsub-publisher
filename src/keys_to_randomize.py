@@ -1,7 +1,8 @@
 from random import choice, random
 import string
 from typing import Dict, List
-import time, datetime, asyncio
+import time, asyncio, pytz
+from datetime import datetime
 
 
 def gen_random_string(length=18, chars=string.ascii_letters):
@@ -13,22 +14,13 @@ def gen_random_digits(length=4, chars=string.digits):
 
 
 def gen_random_date():
-    ts = time.time()
-    rand_nums = gen_random_digits()
-    return str(
-        datetime.datetime.fromtimestamp(ts).strftime(
-            "%Y-%m-%dT%H:%M:%S.{}+02:00".format(str(rand_nums))
-        )
-    )
+    d = datetime.utcnow().replace(tzinfo=pytz.utc)
+    return d.isoformat()
 
 
 keys_to_randomize = {
-    "pipelineComponent": gen_random_string(),
-    "pipelineName": gen_random_string(),
-    "timestampStart": gen_random_date(),
-    "timestampStop": gen_random_date(),
-    "pipelineIdentifier": gen_random_string(),
-    "pipelineComponent": gen_random_string(),
+    "factIntervalStart": gen_random_date(),
+    "factIntervalEnd": gen_random_date(),
     "pipelineComponentType": gen_random_string(),
     "pipelineEnvironment": gen_random_string(),
     "pipelineComponentIdentifier": gen_random_string(),
