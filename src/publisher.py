@@ -23,6 +23,7 @@ async def send_messages():
         )
     else:
         await publish_messages(topic_path, num_of_messages, data)
+    return "finished"
 
 
 async def send_messages_from_query(parameters):
@@ -42,16 +43,27 @@ async def send_messages_from_query(parameters):
         )
     else:
         await publish_messages(topic_path, parameters.numberOfMessages, data)
+    return "finished"
 
 
-async def read_query_msg_and_send(data):
+async def read_query_msg_and_send(data, query_config):
     data = await read_and_randomize(keys_to_randomize, data)
-
-    if config["batch"]:
+    query_config = json.loads(query_config)
+    if query_config["batch"]:
         print("trigger batch processing")
-        batch_settings = config["batchSettings"]
-        publish_messages_with_batch_settings(
-            config["gcpCredentials"]["topicPath"], num_of_messages, batch_settings, data
+        batch_settings = {
+            "maxMessages": query_config["maxMessages"],
+            "maxBytes": query_config["maxBytes"],
+            "maxLatency": query_config["maxLatency"],
+        }
+        response = await publish_messages_with_batch_settings(
+            config["gcpCredentials"]["topicPath"],
+            query_config["numberOfMessages"],
+            batch_settings,
+            data,
         )
     else:
-        await publish_messages(topic_path, num_of_messages, data)
+        response = await publish_messages(
+            topic_path, query_config["numberOfMessages"], data
+        )
+    return response

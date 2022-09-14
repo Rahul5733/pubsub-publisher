@@ -18,7 +18,7 @@ def publish_messages_with_batch_settings(
 
     def callback(future: pubsub_v1.publisher.futures.Future) -> None:
         message_id = future.result()
-        print(message_id)
+        print(f"message with id {message_id} is sent")
 
     for n in range(1, num_of_messages):
 
@@ -30,7 +30,7 @@ def publish_messages_with_batch_settings(
 
     futures.wait(publish_futures, return_when=futures.ALL_COMPLETED)
     print(f"Published messages with batch settings to {topic_path}.")
-    return len(publish_futures)
+    return f"Published {len(publish_futures)+1} messages with batch settings to {topic_path}."
 
 
 @asyncio.coroutine
@@ -44,4 +44,4 @@ def publish_messages(topic_path, num_of_messages: int, data, *args) -> int:
         print(future.result())
 
     print(f"Published messages to {topic_path}.")
-    return len(future.result())
+    return f"Published {n+1} messages with batch settings to {topic_path}."
