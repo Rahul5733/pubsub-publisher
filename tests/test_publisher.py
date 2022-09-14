@@ -25,8 +25,8 @@ async def test_publish_messages_with_batch_settings():
             num_of_messseges,
             batch_settings,
             data,
-        )
-        == read_conf()["messageParameters"]["numberOfMessages"] - 1
+        ),
+        string,
     )
 
 
@@ -40,8 +40,8 @@ async def test_publish_messages():
             config["gcpCredentials"]["topicPath"],
             num_of_messseges,
             data,
-        )
-        == 16
+        ),
+        string,
     )
 
 

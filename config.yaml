@@ -5,7 +5,6 @@ gcpCredentials:
     credentialsPath: "./pubsub-sa.json"
 messageParameters:
     numberOfMessages: 15
-    messageLengthX: 1
 messageArgs:
     origin: python-sample
     username: gcp

@@ -39,11 +39,8 @@ def test_read_query_and_send():
 
 
 async def test_sendmsg():
-    config = read_conf()
-    data = await read_message()
-    response = client.post(
-        "/sendmsg",
-        headers={"X-Token": "coneofsilence"},
-        json=data,
-    )
+    with open("./tests/test_data.json") as f:
+        data = json.load(f)
+
+    response = client.post("/sendmsg", headers={"X-Token": "coneofsilence"}, json=data)
     assert response.status_code == 200

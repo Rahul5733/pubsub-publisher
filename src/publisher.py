@@ -7,7 +7,7 @@ import json
 
 config = read_conf()
 credentials_path = config["gcpCredentials"]["credentialsPath"]
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
+# os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
 publisher = pubsub_v1.PublisherClient()
 topic_path = config["gcpCredentials"]["topicPath"]
 num_of_messages = config["messageParameters"]["numberOfMessages"]

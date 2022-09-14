@@ -1,0 +1,31 @@
+{
+    "message_data": {
+        "message_metadata": {
+            "schemaIdentifier": "spqr-standard-message-schema",
+            "schemaVersion": "0.0.1",
+            "messageUuid": "d0c7fbd6-9041-4fd8-b580-2f4e6f81d2d0",
+            "messageTimestamp": "2021-10-13T18:13:47.895+02:00",
+            "messagePublisher": "Gravitas",
+            "messagePublisherEnvironment": "dev"
+        },
+        "payload": {
+            "factSpecificationIdentifier": "SPQR-123",
+            "factValue": 99,
+            "factIntervalStart": "2021-10-13T18:13:00.000+02:00",
+            "factIntervalEnd": "2021-10-13T18:13:00.000+02:00",
+            "pipelineType": "stream",
+            "pipelineEnvironment": "dev",
+            "pipelineIdentifier": "Deepsea Salesorder",
+            "pipelineComponent": "Gravitas",
+            "pipelineComponentType": "Gravitas GSA",
+            "pipelineComponentIdentifier": "ov-deepsea-salesorder"
+        }
+    },
+    "config": {
+        "numberOfMessages": 15,
+        "batch": false,
+        "maxMessages": 100,
+        "maxBytes": 1024,
+        "maxLatency": 1
+    }
+}
