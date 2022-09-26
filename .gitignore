@@ -1,5 +1,6 @@
 tests/__pycache__/*
 .pytest_cache
 pubsub-sa.json
+config.yaml
 venv
 __pycache__

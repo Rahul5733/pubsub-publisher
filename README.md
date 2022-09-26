@@ -24,11 +24,12 @@ This service can be used as a simulator for pubsub message publisher, it can:
 
 3. Install, create and activate the python virtual environment
     ```
-    sudo apt install python3-virtualenv
+    sudo apt install python3-virtualenv (if not yet installed)
 
     virtualenv venv
 
-    source venv/bin/activate
+    source venv/bin/activate (in Windows: <current_environment_folder>: Scripts\activate
+                              in Unix: <current_environment_folder>: source Scripts/activate)
     ```
 4. Install pubsub-publisher using pip
     ```
@@ -36,8 +37,18 @@ This service can be used as a simulator for pubsub message publisher, it can:
 
     ```
 5. That's it, pubsub-publisher is installed, create a service account and allot it the required credentials, store the key file somewhere locally
+    The key file must be named 'pubsub-sa.json' (because that's its name in .gitignore) and has the following structure:
+    {
+    "client_id": "",
+    "client_secret": "",
+    "quota_project_id": "",
+    "refresh_token": "",
+    "type": ""
+    }
+    This file is usually created when running the command 'gcloud auth application-default login'
+    and is located in your gcloud folder.
 
-5. Now change the config.json file with your project settings
+5. Now change the config.yaml file with your project settings
     ```
     projectId: YOUR_PROJECT_ID
     topicPath: projects/PROJECT_ID/topics/TOPIC_NAME
@@ -45,6 +56,7 @@ This service can be used as a simulator for pubsub message publisher, it can:
     credentialsPath: PATH-TO-THE-CREDENTIALS-FILE
     ./run_publisher.sh
     ```
+    This file should be put in .gitignore to not accidentally publish credentials to Git.
 
 6. in case, the subscription has to be emptied, empty it using
     ```
@@ -55,6 +67,9 @@ This service can be used as a simulator for pubsub message publisher, it can:
  to run locally, just uncomment the code line in [publisher.py](src/publisher.py):
 
  `os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path`
+
+ (if not working, login using 'gcloud auth application-default login' once to change
+ the file 'application_default_credentials.json' in your gcloud folder and comment out the line above)
 
  to run it in the cloud, comment it out:
 

@@ -1,4 +1,5 @@
 import os
+from typing import AsyncIterator
 from google.cloud import pubsub_v1
 from support_functions import *
 from publish_methodes import *
@@ -7,7 +8,7 @@ import json
 
 config = read_conf()
 credentials_path = config["gcpCredentials"]["credentialsPath"]
-# os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
+#os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
 publisher = pubsub_v1.PublisherClient()
 topic_path = config["gcpCredentials"]["topicPath"]
 num_of_messages = config["messageParameters"]["numberOfMessages"]
@@ -67,3 +68,7 @@ async def read_query_msg_and_send(data, query_config):
             topic_path, query_config["numberOfMessages"], data
         )
     return response
+
+if __name__ == '__main__':
+    import asyncio
+    asyncio.run(send_messages())
