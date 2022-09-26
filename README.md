@@ -38,6 +38,7 @@ This service can be used as a simulator for pubsub message publisher, it can:
     ```
 5. That's it, pubsub-publisher is installed, create a service account and allot it the required credentials, store the key file somewhere locally
     The key file must be named 'pubsub-sa.json' (because that's its name in .gitignore) and has the following structure:
+    ```
     {
     "client_id": "",
     "client_secret": "",
@@ -45,6 +46,7 @@ This service can be used as a simulator for pubsub message publisher, it can:
     "refresh_token": "",
     "type": ""
     }
+    ```
     This file is usually created when running the command 'gcloud auth application-default login'
     and is located in your gcloud folder.
 
